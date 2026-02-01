@@ -1,0 +1,2 @@
+Write a Python program to check whether a given string is a palindrome or not.
+(A palindrome is a word that reads the same forward and backward, e.g., "madam", "level").

@@ -1,0 +1,45 @@
+def dfs_recursive(graph, start, target, visited=None):
+    if visited is None:
+        visited = set()
+    visited.add(start)
+    
+    if start == target:
+        return f"Found {target} in the depths!"
+    
+    print(f"Exploring: {start}")  # Demo print
+    
+    for neighbor in graph[start]:
+        if neighbor not in visited:
+            result = dfs_recursive(graph, neighbor, target, visited)
+            if result:  # Early exit if found
+                return result
+    
+    return f"{target} eluded the depths—backtrack city."
+
+def dfs_iterative(graph, start, target):
+    visited = set()
+    stack = [start]  # LIFO stack for DFS
+    visited.add(start)
+    
+    while stack:
+        node = stack.pop()  # Pop from end (top of stack)
+        print(f"Popped and visiting: {node}")
+        
+        if node == target:
+            return f"Found {target} via stack power!"
+        
+        for neighbor in reversed(graph[node]):  # Reversed to mimic recursion order
+            if neighbor not in visited:
+                visited.add(neighbor)
+                stack.append(neighbor)
+    
+    return f"{target} not in this branch—stack empty."
+
+# Same sample graph as above
+sample_graph = {'A': ['B', 'C'], 'B': ['A', 'D'], 'C': ['A', 'D'], 'D': ['B', 'C']}
+
+# Demos
+print("Recursive DFS:")
+print(dfs_recursive(sample_graph, 'A', 'D'))
+print("\nIterative DFS:")
+print(dfs_iterative(sample_graph, 'A', 'D'))

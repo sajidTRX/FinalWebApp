@@ -1,0 +1,51 @@
+ let's pick a classic offender: Bubble Sort. It's like that friend who insists on rearranging the furniture every five minutes—inefficient, outdated, but hey, it gets the job done (eventually). Bubble Sort sorts an array by repeatedly swapping adjacent elements if they're in the wrong order. Naïve implementation, worst-case nightmare.
+
+
+The Algorithm (Pseudocode, Because Who Has Time for Full Code?)
+
+function bubbleSort(array):
+    n = length(array)
+    for i from 0 to n-1:
+        for j from 0 to n-i-1:
+            if array[j] > array[j+1]:
+                swap array[j] and array[j+1]
+    return array
+
+Time Complexity Breakdown: Step-by-Step Sarcasm Edition
+
+Time complexity measures how the runtime grows with input size n. We ignore constants (like "swap takes 1 second") and focus on the dominant operations—comparisons and swaps here. Big O is the upper bound; we'll hit best, average, and worst cases for the full monty.
+
+
+
+
+Outer Loop (i from 0 to n-1): Runs n times. That's the boss level—inevitable.
+
+
+
+
+Inner Loop (j from 0 to n-i-1): For each i, it runs roughly n - i times. So, total inner iterations? Sum from 1 to n, which is n(n+1)/2 ≈ O(n²). Yeah, quadratic—like your ex's drama, it scales badly.
+
+
+
+
+Operations Inside: Each inner loop does a comparison (if) and potentially a swap. Both are O(1)—constant time, no biggie. But multiply by O(n²) loops? Boom, the whole shebang is O(n²).
+
+
+
+
+
+Worst Case: Already sorted in reverse? Every comparison swaps. Full O(n²)—the algorithm's sweating bullets.
+
+Best Case: Already sorted? We still do all comparisons (no early exit in this basic version). Still O(n²). Bubble Sort: zero self-awareness.
+
+Average Case: Random data? About half the swaps, but comparisons are full throttle. Still O(n²). No escaping the quadratic trap.
+
+
+Space Complexity (The Freebie)
+
+Just the array itself—no extra space beyond a few variables. O(1) auxiliary space. Efficient on memory, lazy on speed. Like a sports car with a flat tire.
+
+
+Why Care? (The Snarky Reality Check)
+
+In a world of quicksorts and mergesorts (O(n log n) rockstars), Bubble Sort is the punchline. Use it to learn, not to launch. If your n hits 10,000, expect a coffee break—or ten. Pro tip: For real analysis, count the loops, sum the work, drop the low-order terms. Got a specific algo you want me to roast next? Hit me—I'm all ears and algorithms.
