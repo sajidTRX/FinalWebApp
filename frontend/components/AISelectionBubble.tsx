@@ -678,7 +678,6 @@ export function AISelectionBubble({ editor }: AISelectionBubbleProps) {
       setIsLoading(false);
     }
   }, [editor, setConceptMapFromAI]);
-
   // Handle quick action
   const handleQuickAction = useCallback((action: QuickAction) => {
     if (action.id === "concept-map") {

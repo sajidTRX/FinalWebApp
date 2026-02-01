@@ -421,7 +421,7 @@ export default function LandingScreen() {
         <button
   onClick={handleChooseMode}
   className="
-    mt-8
+    mt-14
     text-[#f5c86b] hover:text-[#ffdf8c]
     font-bold
     tracking-wide
